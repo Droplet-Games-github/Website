@@ -17,6 +17,10 @@ body {
   padding: 0;
 }
 
+.header {
+  width: 100%;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -65,63 +69,68 @@ body {
   background-color: var(--accent);
 }
 
-.about-section {
-  padding: 2rem;
-  background-color: var(--background);
+.banner {
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   color: var(--text);
-  margin-top: 5rem;
 }
 
-.about-section h2 {
-  font-size: 3.158rem;
+.banner-content {
+  max-width: 800px;
+}
+
+.banner h2 {
+  font-size: 4.210rem;
   margin-bottom: 1rem;
 }
 
-.about-section p {
+.banner p {
   font-size: 1.333rem;
   line-height: 1.5;
+  margin-bottom: 2rem;
 }
 
-.footer {
-  background-color: var(--primary);
+.primary-btn {
+  background-color: var(--accent);
   color: var(--text);
-  padding: 1rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.footer p {
-  margin: 0;
+  border: none;
+  padding: 0.5rem 1rem;
   font-size: 1.333rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.footer a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
+.primary-btn:hover {
+  background-color: #6d4dd9;
 }
 
-.footer a:hover {
-  color: #fff;
+.games-section {
+  padding: 2rem;
+  background-color: var(--background);
+  color: var(--text);
 }
 
-/* Fix header layout */
-.navbar {
-  height: 60px;
+.games-section h2 {
+  font-size: 3.158rem;
+  margin-bottom: 2rem;
 }
 
-.logo {
-  line-height: 60px;
+.games-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.nav-links {
-  line-height: 60px;
-}
-
-.nav-links li {
-  margin-right: 1rem;
-}
-
-.nav-links a {
-  padding: 0 0.5rem;
-}
+.game-card {
+  background-color: var(--secondary);
+  color: var(--text);
+  padding: 2rem;
+  flex-basis: calc(33.333% - 2rem);
+  margin-bottom: 2rem;
