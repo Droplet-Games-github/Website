@@ -1,13 +1,63 @@
-/* Importing Fonts */
-@import url('https://fonts.googleapis.com/css?family=Rubik:700|Rubik:400');
+@import url('https://fonts.googleapis.com/css?family=Rubik:700|rubik:400');
 
-/* Font Styles */
-body {
-    font-family: 'Rubik', sans-serif;
-    font-weight: 400;
-    color: var(--text);
-    background-color: var(--background);
+:root {
+  --text: #c2ceff;
+  --background: #00001a;
+  --primary: #0b066f;
+  --secondary: #0833a0;
+  --accent: #8157f4;
 }
+
+body {
+  font-family: 'rubik', sans-serif;
+  font-weight: 400;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-right: 2rem;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--secondary);
+}
+
+nav a.active {
+  background-color: var(--accent);
+}
+
 
 h1, h2, h3, h4, h5 {
     font-family: 'Rubik', sans-serif;
