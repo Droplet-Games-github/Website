@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary);
+  background-color: #0b066f;
   padding: 1rem;
   position: fixed;
   top: 0;
@@ -33,7 +33,7 @@ body {
 
 .logo {
   margin: 0;
-  color: var(--text);
+  color: #fff;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -52,20 +52,18 @@ body {
 .nav-links a {
   display: block;
   padding: 0.5rem 1rem;
-  color: var(--text);
+  color: #fff;
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
 
 .nav-links a:hover {
-  background-color: var(--secondary);
+  background-color: #0833a0;
 }
 
 .nav-links a.active {
-  background-color: var(--accent);
+  background-color: #8157f4;
 }
-
-
 
 h1, h2, h3, h4, h5 {
     font-family: 'Rubik', sans-serif;
