@@ -18,11 +18,11 @@ body {
   color: var(--text);
   margin: 0;
   padding: 0;
-  cursor: url('CURSOR-2.png'),auto;
 }
 
 .header {
   width: 100%;
+  backdrop-filter: blur(10px);
   background-color: rgba(11, 6, 111, 0.8);
   position: sticky;
   top: 0;
@@ -31,7 +31,6 @@ body {
 
 .navbar {
   display: flex;
-  backdrop-filter: blur(2px);
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
@@ -50,7 +49,6 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-radius: 5rem;
 }
 
 .nav-links li {
@@ -62,15 +60,17 @@ body {
   padding: 0.5rem 1rem;
   color: var(--text);
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
 }
 
 .nav-links a:hover {
   background-color: var(--secondary);
+  border-radius: 25px; /* Adding rounded corners on hover */
 }
 
 .nav-links a.active {
   background-color: var(--accent);
+  border-radius: 25px; /* Ensure active link has rounded corners */
 }
 
 .banner {
@@ -107,12 +107,13 @@ body {
   padding: 0.5rem 1rem;
   font-size: 1.333rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
   border-radius: 999px; /* Pill button */
 }
 
 .primary-btn:hover {
   background-color: var(--button-hover);
+  border-radius: 999px; /* Maintain pill shape on hover */
 }
 
 .primary-btn:disabled {
