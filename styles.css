@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik:700|rubik:400');
+@import url('https://fonts.googleapis.com/css?family=Rubik:700|Rubik:400');
 
 :root {
   --text: #c2ceff;
-  --background: #ffc0cb;
-  --primary: #ff69b4;
-  --secondary: #ff1493;
+  --background: #00001a;
+  --primary: #0b066f;
+  --secondary: #0833a0;
   --accent: #8157f4;
+  --button-hover: #1109a7;
+  --disabled-background: #4d4f5a;
+  --disabled-text: #808080;
 }
 
 body {
-  font-family: 'rubik';
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
   background-color: var(--background);
   color: var(--text);
@@ -19,13 +22,14 @@ body {
 
 .header {
   width: 100%;
+  backdrop-filter: blur(10px); /* Apply the blur effect */
+  background-color: rgba(11, 6, 111, 0.8); /* Slightly transparent background color */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary);
   padding: 1rem;
   position: fixed;
   top: 0;
@@ -104,11 +108,16 @@ body {
   font-size: 1.333rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  border-radius: 25px;
+  border-radius: 999px; /* Pill button */
 }
 
 .primary-btn:hover {
-  background-color: #6d4dd9;
+  background-color: var(--button-hover);
+}
+
+.primary-btn:disabled {
+  background-color: var(--disabled-background);
+  color: var(--disabled-text);
 }
 
 .games-section {
@@ -134,4 +143,42 @@ body {
   color: var(--text);
   padding: 2rem;
   flex-basis: calc(33.333% - 2rem);
-  margin
+  margin-bottom: 2rem;
+  border-radius: 10px;
+}
+
+footer {
+  padding: 1rem;
+  background-color: var(--primary);
+  color: var(--text);
+  text-align: center;
+}
+
+.about-section, .projects-section {
+  padding: 2rem;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.about-section h2, .projects-section h2 {
+  font-size: 3.158rem;
+  margin-bottom: 2rem;
+}
+
+.project-card {
+  background-color: var(--secondary);
+  color: var(--text);
+  padding: 2rem;
+  flex-basis: calc(50% - 2rem);
+  margin-bottom: 2rem;
+  border-radius: 10px;
+}
+
+.project-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
