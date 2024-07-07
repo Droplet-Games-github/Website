@@ -22,8 +22,11 @@ body {
 
 .header {
   width: 100%;
-  backdrop-filter: blur(10px); /* Apply the blur effect */
-  background-color: rgba(11, 6, 111, 0.8); /* Slightly transparent background color */
+  backdrop-filter: blur(10px);
+  background-color: rgba(11, 6, 111, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar {
@@ -31,12 +34,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -101,7 +99,7 @@ body {
 }
 
 .primary-btn {
-  background-color: var(--accent);
+  background-color: var(--primary);
   color: var(--text);
   border: none;
   padding: 0.5rem 1rem;
@@ -154,6 +152,16 @@ footer {
   text-align: center;
 }
 
+footer a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
 .about-section, .projects-section {
   padding: 2rem;
   background-color: var(--background);
@@ -177,8 +185,9 @@ footer {
 .project-card a {
   color: var(--accent);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .project-card a:hover {
-  text-decoration: underline;
+  color: var(--button-hover);
 }
