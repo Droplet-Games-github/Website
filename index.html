@@ -4,45 +4,279 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Droplet Games</title>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:700|rubik:400" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-   </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Rubik:700|rubik:400');
+
+        :root {
+            --text: #c2ceff;
+            --background: #00001a;
+            --primary: #0b066f;
+            --secondary: #0833a0;
+            --accent: #8157f4;
+            --success: #0aa90a;
+            --danger: #a90a0a;
+            --warning: #a9a90a;
+            --ion-color-primary: #0b066f;
+            --ion-text-color: #c2ceff;
+        }
+
+        body {
+            font-family: 'rubik', sans-serif;
+            font-weight: 400;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        h1 { font-size: 4.210rem; }
+        h2 { font-size: 3.14rem; }
+        h3 { font-size: 2.369rem; }
+        h4 { font-size: 1.777rem; }
+        h5 { font-size: 1.333rem; }
+        small { font-size: 0.750rem; }
+
+        #h1 {
+            background: #0833a0d1;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 .2em 3em #0833a088;
+            border-radius: 1.05em;
+            margin:.2em;
+            margin-left: 10%;
+            width: 20%;
+            height: min-content;
+            padding: .2em;
+            backdrop-filter: blur(.3em);
+        }
+
+        #h2 {
+            background: #0833a0d1;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 .2em 3em #0833a088;
+            border-radius: 1.05em;
+            margin:.2em;
+            margin-right: 10%;
+            width: 60%;
+            height: min-content;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: .2em;
+            backdrop-filter: blur(.3em);
+        }
+
+        #group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header h1 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 3.5rem; /* Smaller header size */
+            margin: 0;
+        }
+
+        .slogan-section {
+            background: linear-gradient(to bottom, #0b066f, #020117);
+            padding: 20% 7%;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: inset 0 0 50px #0833a056;
+        }
+
+        .slogan-section h2 {
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 4em;
+        }
+
+        .slogan-section p {
+            font-size: 2.5em;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            gap: 30px;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+        }
+
+        .btn:hover, .btn:active {
+            background-color: #1109a7;
+        }
+
+        .btn:disabled {
+            background-color: #4d4f5a;
+            color: #808080;
+        }
+
+        .card {
+            background-color: var(--background);
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 40%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+            opacity: 100%;
+        }
+
+        .card img {
+            width: 100%;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .card h2 {
+            margin: 20px 0;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .card p {
+            padding: 0 20px 30px;
+            font-size: 1.1em;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 30px 0;
+            text-align: center;
+            background: var(--primary);
+            border-top: 3px solid var(--accent);
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        footer p {
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #1109a7;
+        }
+
+        #ct {
+            text-align: center;
+        }
+
+        header {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sticky-header {
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            background-color: transparent;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sticky-header, body {
+            margin: 0;
+        }
+        h4 {
+            margin: 0;
+        }
+    </style>
+</head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <h1 class="logo">Droplet Games</h1>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-            <div class="banner-content">
-                <h2>Experience the Thrill</h2>
-                <p>Splash into the Fun of<br>mobile games</p>
-            </div>
+    <header id="header" class="sticky-header">
+        <div id="h1">
+            <h4>Droplet Games</h4>
+        </div>
+        <div id="h2">
+            <a href="/sps.html"><h4>Square Peg Solitaire</h4></a>
+            <a href="/sps.html"><h4>Square Peg Solitaire</h4></a>
+        </div>
     </header>
-    <main>
-        <section class="games-section">
-            <h2>Our Stuff</h2>
-            <div class="games-grid">
-                <div class="game-card">
-                    <h3>Square Peg Solitaire</h3>
-                    <p>Coming September 1st</p>
-                    <button class="primary-btn">Play Now</button>
-                </div>
-                <div class="game-card">
-                    <h3>Droplet AI Beta</h3>
-                    <p>Try our new AI-driven gaming experience.</p>
-                    <button class="primary-btn">Play Now</button>
-                </div>
-                <button>See All Projects</button>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p>Contact us at: <a href="mailto:droplet-games@onmail.com">droplet-games@onmail.com</a></p>
+
+    <section class="slogan-section">
+        <h2>Experience the Thrill</h2>
+        <p>Splash into the Fun of gaming</p>
+    </section>
+    <div id="ct"><h2>Our Stuff.</h2></div>
+    <div class="container">
+        <div class="card">
+            <img src="https://via.placeholder.com/350x200" alt="Game Image">
+            <h2>Square Peg Solitaire</h2>
+            <p>Our first epic game. coming Beta out now.</p>
+            <button class="btn">Try Beta</button>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/350x200" alt="Game Image">
+            <h2>Droplet AI</h2>
+            <p>bad & discontinued</p>
+            <button class="btn">Try it for some reason</button>
+        </div>
+    </div>
+
+    <footer>
+        <div id="group">
+
+        <div>
+        <h4>Contact</h4>
+        <p>dropletgames@onmail.com</p>
+    </div>
+
+         <div>
+        <h4>Our Stuff</h4>
+        <p>Square Peg Solitaire</p>
+        <p>Droplet AI (discontinued even though it's in beta)</p>
+    </div>
+   </div>
+        <hr>
         <p>&copy; 2024 Droplet Games. All rights reserved.</p>
     </footer>
 </body>
