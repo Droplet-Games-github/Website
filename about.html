@@ -218,19 +218,92 @@
             gap: 20px;
             padding: .5em;
         }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 80%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+        }
+
+        .modal-content {
+            background: #0833a099;
+            backdrop-filter: blur(.7em);
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            width: 80%; /* Could be more or less, depending on screen size */
+            border-radius: 2em;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .hbtn {
+            background: transparent;
+            color: transparent;
+            font-size: 1px;
+            border: none;
+        }
+        @media (max-width: 768px) {
+            #h2 {
+                opacity: 0%;
+                width: 1px;
+                height: 1px;
+            }
+            #h2 h4{
+                font-size: 1px;
+            }
+            #h1 {
+                width: 100%;
+            }
+            .hbtn {
+            background: transparent;
+            color: var(--text);
+            font-size: 2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+        }
+
+        }
     </style>
 </head>
 <body>
     <header id="header" class="sticky-header">
         <div id="h1">
             <img src="logo.png" alt="logo" style="width: 35px; height: 35px; object-fit: contain;">
-            <a href="/Website"><h4>Droplet Games</h4></a>
+            <a href="/Website"><h4>Droplet Games</h4></a><button class="hbtn" id="openModalBtn">=</button>
         </div>
         <div id="h2">
             <a href="/Website/sps.html"><h4>Square Peg Solitaire</h4></a>
             <a href="/Website/about.html"><h4>About</h4></a>
         </div>
     </header>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h2>Where Do you want to go</h2>
+            <a href="/Website/sps.html"><h4>Square Peg Solitaire</h4></a>
+            <a href="/Website/about.html"><h4>About</h4></a>
+        </div>
+
+    </div>
 
     <section class="slogan-section">
         <h1>About Droplet Games</h1>
@@ -266,5 +339,32 @@
     </div>
    </div>
     </footer>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var hbtn = document.getElementById("openModalBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("closeModalBtn");
+
+        // When the user clicks the button, open the modal 
+        hbtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
