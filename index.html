@@ -147,6 +147,40 @@
             color: #808080;
         }
 
+        .card {
+            background-color: var(--background);
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 60%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+            opacity: 100%;
+        }
+
+        .card img {
+            width: 100%;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .card h2 {
+            margin: 20px 0;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .card p {
+            padding: 0 20px 30px;
+            font-size: 1.1em;
+        }
+
         footer {
             margin-top: 40px;
             padding: 30px 0;
@@ -263,14 +297,12 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
             border: none;
-
         }
         .card {
             opacity: 90%;
         }
 
         }
-        
     </style>
 </head>
 <body>
