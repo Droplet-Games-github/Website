@@ -11,3 +11,7 @@ This website is built using Apache 2 license. For more information, please see t
 If you have any questions or concerns, please contact us at [dropletgames@onmail.com](mailto:dropletgames@onmail.com).
 
 Enjoy exploring our website and learning more about Droplet Games!
+
+## Try it
+
+[https://droplet-games-github.github.io/Website/](https://droplet-games-github.github.io/Website/)
