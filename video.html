@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droplet Games - Video Player</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Rubik:700|rubik:400');
+
+        :root {
+            --text: #c2ceff;
+            --background: #00001a;
+            --primary: #0b066f;
+            --secondary: #0833a0;
+            --accent: #8157f4;
+            --success: #0aa90a;
+            --danger: #a90a0a;
+            --warning: #a9a90a;
+            --ion-color-primary: #0b066f;
+            --ion-text-color: #c2ceff;
+        }
+
+        body {
+            font-family: 'rubik', sans-serif;
+            font-weight: 400;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+
+        video {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            max-width: 80%;
+            height: auto;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+        }
+
+        .btn:hover, .btn:active {
+            background-color: #1109a7;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 30px 0;
+            text-align: center;
+            background: var(--primary);
+            border-top: 3px solid var(--accent);
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        footer p {
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Droplet Games - Video Player</h1>
+    </header>
+
+    <div class="container">
+        <!-- Video player -->
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Button to play video -->
+        <button class="btn" onclick="playVideo()">Play Video</button>
+    </div>
+
+    <footer>
+        <p>© 2024 Droplet Games. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function playVideo() {
+            var video = document.querySelector('video');
+            video.play();
+        }
+    </script>
+</body>
+</html>
 
