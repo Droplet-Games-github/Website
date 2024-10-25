@@ -88,6 +88,17 @@
             border-top: 3px solid var(--accent);
             box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
         }
+
+        /* Add link styling */
+        a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
@@ -95,14 +106,16 @@
         <div id="h1">
             <img src="logo.png" alt="logo" style="width: 35px; height: 35px; object-fit: contain;">
             <a href="/Website"><h4>Droplet Games</h4></a>
-          </div>
+        </div>
     </header>
+
     <!-- Video section -->
     <section class="video-section">
         <h2>Watch Our Showcase Video</h2>
         <video controls>
             <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video tag ): you can download it from github https://github.com/Droplet-Games-github/Website/blob/main/video.mp4
+            Your browser does not support the video tag ): you can download it from github 
+            <a href="https://github.com/Droplet-Games-github/Website/blob/main/video.mp4">here</a>.
         </video>
     </section>
 
@@ -113,7 +126,7 @@
     </footer>
 
     <script>
-          hbtn.onclick = function() {
+        hbtn.onclick = function() {
             modal.style.display = "block";
         }
 
